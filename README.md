@@ -42,6 +42,7 @@ In order to train an agent with the previous db:
 cd ~/softagent/
 mkdir ravens/soft-fold-train
 cp -r data/ravens_sg/* ravens/soft-fold-train/
+cd ravens/
 python ravens/train.py --task=soft-fold --agent=transporter --n_demos=1
 ```
 You can stop it at 1000 iterations (first tensorflow checkpoint). And continue with testing
@@ -51,5 +52,6 @@ You can stop it at 1000 iterations (first tensorflow checkpoint). And continue w
 cd ~/softagent/
 mkdir ravens/soft-fold-test
 cp -r data/ravens_sg/* ravens/soft-fold-test/
-python ravens/test.py --assets_root=./ravens/environments/assets/ --disp=True --task=soft-fold --agent=transporter --n_demos=1 --n_steps=1000
+cd ravens/
+python ravens/test_sg.py --assets_root=./ravens/environments/assets/ --disp=True --task=soft-fold --agent=transporter --n_demos=1 --n_steps=1000
 ```
