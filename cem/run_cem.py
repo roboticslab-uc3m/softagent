@@ -1,6 +1,6 @@
 from cem import CEMPolicy
 from experiments.planet.train import update_env_kwargs
-from visualize_cem import cem_make_gif, make_ravens_db, make_ravens_db_inv
+from visualize_cem import cem_make_gif, make_ravens_db
 from planet.utils import transform_info
 from envs.env import Env
 from chester import logger
@@ -157,7 +157,7 @@ def run_ravens_db(vv, exp_name, log_dir, demo_dir, traj_dir):
     env_render = env_class(**env_kwargs_render)
 
     # Recover trajectories from dict
-    handle = open('traj_dir', 'rb')
+    handle = open(traj_dir, 'rb')
     traj_dict = pickle.load(handle)
     print("Reading trajectories from :", handle)
 
@@ -180,7 +180,7 @@ def main():
     parser.add_argument('--demo_dir', default='./data/ravens_sg') # path to save pkl with ravens-like demostrations
     parser.add_argument('--test_episodes', default=1, type=int)
     parser.add_argument('--seed', default=100, type=int)
-    parser.add_argument('--to_ravens_db', default=False, type=int)
+    parser.add_argument('--to_ravens_db', default=True, type=int)
 
     # CEM
     parser.add_argument('--max_iters', default=1, type=int)

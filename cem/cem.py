@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 import scipy.stats as stats
 from tqdm import tqdm
-from cem.parallel_worker import ParallelRolloutWorker
+from parallel_worker import ParallelRolloutWorker
 
 
 class CEMOptimizer(object):

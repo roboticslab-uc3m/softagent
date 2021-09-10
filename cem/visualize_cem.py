@@ -22,11 +22,10 @@ from skimage.feature import peak_local_max
 
 
 def segment_depthmap(d_map):
-	"""
-	From:
-	https://scikit-image.org/docs/dev/auto_examples/segmentation/plot_watershed.html#sphx-glr-auto-examples-segmentation-plot-watershed-py
-	"""
-    image = d_map * 100 # Denormalize image
+	
+	#https://scikit-image.org/docs/dev/auto_examples/segmentation/plot_watershed.html#sphx-glr-auto-examples-segmentation-plot-watershed-py
+	
+    image = d_map * 100 # Denormalize
     img_aux = Image.fromarray(image, 'F') 
     img_aux.show()
 
